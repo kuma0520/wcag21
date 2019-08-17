@@ -60,24 +60,24 @@
       <main>
          <section id="intent">
             <h2>意図</h2>
-            <p>The intent of this success criterion is to make it easier for users to prevent accidental or erroneous pointer input. People with various disabilities can inadvertently initiate touch or mouse events with unwanted results. Each of the following subsections roughly aligns with the bullets of this Success Criterion, and outlines a means of allowing users to cancel pointer operations.</p>
+            <p>この達成基準の意図は、利用者が偶発的又は誤ったポインタ入力を防止することを容易にすることである。様々な障害者が、意図せずタッチ又はマウスイベントを開始してしまい、望ましくない結果を招くことがある。以下の各サブセクションは、この達成基準の箇条書きとほぼ一致しており、利用者がポインタ操作をキャンセルできる手段を概説している。</p>
             <section id="up-event-activation-or-completion">
                			
-               <h3>Up-Event activation or completion</h3>
+               <h3>アップイベントによる動作又は完遂</h3>
                			
-               <p>The most accessible way to incorporate pointer cancellation is to make activation occur on the up-event.</p>
+               <p>ポインタのキャンセルを組み込む最もアクセシブルな方法は、動作がアップイベントによって発生するようにすることである。</p>
                
                
-               <p>Up-event activation refers to the activation of a target when the pointer is released. In a touchscreen interaction, when the finger touches a target, the up-event activation only occurs when the finger is lifted while still being within the target boundary. Similarly in mouse interaction, the up-event occurs when the mouse button is released while the cursor is still within the boundary of the initial target set when the mouse button was pressed.</p>
+               <p>アップイベントによる動作とは、ポインタの押下が解放されたときにターゲットが動作することである。タッチスクリーンのインタラクションでは、指がターゲットに触れているとき、ターゲット領域内にあった指が持ち上げられた場合にのみ、アップイベントによる動作が発生する。同様にマウスによるインタラクションでは、マウスボタンを押したときのターゲットセット領域内にカーソルがある状態でマウスボタンを離した場合に、アップイベントが発生する。</p>
                
-               <p>Authors can reduce the problem of users inadvertently triggering an action by using generic platform activation/click events that activate functionality on the up-event. For example, the <code>click</code> event in JavaScript triggers on release of the primary mouse button, and is an example of an implicit up-event. Despite its name, the <code>click</code> event is device-independent and also works for touch and keyboard interaction.</p>
+               <p>コンテンツ制作者は、アップイベントで機能を動作させる一般的なプラットフォームの動作／クリックイベントを使用することによって、利用者が不用意に動作を引き起こしてしまう問題を減らすことができる。例えば JavaScript の <code>click</code> イベントは、マウスの主ボタンの押下が解放されたときにトリガーされる、暗黙的なアップイベントの一例である。その名称にもかかわらず、<code>click</code> イベントはデバイス非依存であり、タッチ及びキーボード操作においても機能する。</p>
                
-               <p>The preference for up-events is implicit in the Success Criterion wording of the first bullet: <q>The down-event of the pointer is not used to execute any part of the function.</q> Authors meet the first bullet by using only the up-event.</p> 
+               <p>アップイベントの優先度は、達成基準の最初の箇条書きの表現の中で暗黙的に示されている。つまり、<q>機能を実行する目的でポインタのダウンイベントを使用していない</p>ことである。コンテンツ制作者は、アップイベントのみを用いることで、最初の箇条書きを満たすのである。</p> 
                			
             </section>
             <section id="up-event-abort-or-undo">
                
-               <h3>Up-Event Abort or Undo</h3>
+               <h3>アップイベントによる中止又は取り消し</h3>
                
                <p>Where the interaction is equivalent to a simple &quot;click&quot;, up-event activation has a built-in ability to cancel. There is a distinction between when someone touches a screen and when they remove their finger. Similarly, in mouse interaction, there is a difference between pressing and releasing the mouse button. When activation occurs only as the pointer is released, users have the opportunity to Abort (cancel) the activation. Users who have difficulty accurately using a mouse or touchscreen benefit greatly from this basic behaviour. They normally receive visual feedback when an item is pressed. If they discover they have selected the wrong item, they can cancel the action by moving their pointer or finger away from the target before releasing.</p>
                			
